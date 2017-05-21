@@ -1,6 +1,5 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { getNewsSuccess, getNewsFailure } from './actions';
-import Firebase from 'firebase';
 import db from '../../base';
 import { GET_NEWS } from './constants';
 

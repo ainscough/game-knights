@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Grid } from 'semantic-ui-react';
+import { Advertisement, Card, Grid } from 'semantic-ui-react';
 import Immutable from 'immutable';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -24,14 +24,18 @@ class NewsContainer extends Component {
 
   render(){
     return(
-      <div>
-        News Here
-        <Grid padded>
-          <Card.Group>
-            {this.props.articles.map((article, i) => <NewsEntry info={article} key={i} i={i}/>)}
-          </Card.Group>
-        </Grid>
-      </div>
+
+      <Grid padded>
+        <Grid.Column width={14}>
+            <Card.Group>
+              {this.props.articles.map((article, i) => <NewsEntry info={article} key={i} i={i}/>)}
+            </Card.Group>
+        </Grid.Column>
+        <Grid.Column width={2}>
+          <Advertisement unit='wide skyscraper' test='Wide Skyscraper FC'/>
+        </Grid.Column>
+      </Grid>
+
     )
   }
 }
